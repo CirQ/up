@@ -1,5 +1,8 @@
 #!/bin/sh
 
+apt update && apt upgrade -y
+apt install docker.io -y
+
 # prepare config file
 token=$(uuidgen)
 sed "s/####/$token/g" config_template.json > config.json
